@@ -1,3 +1,17 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "next/core-web-vitals",
+    "plugin:@stylistic/recommended-extends"
+  ],
+  "plugins": ["react", "@stylistic"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
