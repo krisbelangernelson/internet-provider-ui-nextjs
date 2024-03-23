@@ -45,6 +45,58 @@ export const NAV_MENU = [
   },
 ]
 
+export const FOOTER = [
+  [{
+    label: 'Internet',
+    link: ROUTES.internet,
+  }, {
+    label: 'Our Plans',
+    link: ROUTES.internet,
+  }, {
+    label: 'How it works',
+    link: '#',
+  }],
+  // 2nd
+  [{
+    label: 'Why Ping!',
+    link: '#',
+  }, {
+    label: 'Our company',
+    link: '#',
+  }, {
+    label: 'Social engagement',
+    link: '#',
+  }, {
+    label: 'Rewards',
+    link: '#',
+  }],
+  // 3rd
+  [{
+    label: 'Help',
+    link: '#',
+  }, {
+    label: 'FAQ',
+    link: '#',
+  }, {
+    label: 'Support',
+    link: '#',
+  }],
+  // 4th
+  [{
+    label: 'Socials',
+    link: '#',
+  }, {
+    label: 'Facebook',
+    link: '#',
+  }, {
+    label: 'LinkedIn',
+    link: '#',
+  }, {
+    label: 'YouTube',
+    link: '#',
+  }],
+]
+
 export const HELP_CHOOSE_HEADERS = [
   'Number of people',
   'Number of devices',
