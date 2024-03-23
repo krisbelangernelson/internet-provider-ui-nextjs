@@ -20,7 +20,7 @@ export default function NavBurger(props: NavBurgerProps) {
       >
         <NavBurgerLine burgerLine={burgerLine} toggleMenu={toggleMenu} />
         <div
-          className={`${burgerLine} ${toggleMenu ? 'opacity-0' : 'opacity-50 group-hover:opacity-100'}`}
+          className={`${burgerLine} ${toggleMenu ? 'opacity-0' : 'opacity-100'}`}
         />
         <NavBurgerLine burgerLine={burgerLine} invert={true} toggleMenu={toggleMenu} />
       </button>

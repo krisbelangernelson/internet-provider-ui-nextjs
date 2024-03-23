@@ -15,8 +15,8 @@ export default function NavBurgerLine(props: NavBurgerLineProps) {
   return (
     <div
       className={`${burgerLine} ${toggleMenu
-        ? `${inverted()}rotate-45 ${inverted()}translate-y-3 opacity-50 group-hover:opacity-100`
-        : 'opacity-50 group-hover:opacity-100'}`}
+        ? `${inverted()}rotate-45 ${inverted()}translate-y-3 opacity-100`
+        : 'opacity-100'}`}
     />
   )
 }
