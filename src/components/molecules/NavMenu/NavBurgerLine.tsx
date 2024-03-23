@@ -2,16 +2,20 @@
 
 interface NavBurgerLineProps {
   burgerLine: string
+  invert?: boolean
   toggleMenu: boolean
 }
 
 export default function NavBurgerLine(props: NavBurgerLineProps) {
-  const { burgerLine, toggleMenu } = props
+  const { burgerLine, toggleMenu, invert } = props
+  console.log('invert', invert)
+
+  const inverted = () => invert === true ? '-' : ''
 
   return (
     <div
       className={`${burgerLine} ${toggleMenu
-        ? 'rotate-45 translate-y-3 opacity-50 group-hover:opacity-100'
+        ? `${inverted()}rotate-45 ${inverted()}translate-y-3 opacity-50 group-hover:opacity-100`
         : 'opacity-50 group-hover:opacity-100'}`}
     />
   )

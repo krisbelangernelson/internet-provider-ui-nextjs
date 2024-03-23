@@ -22,7 +22,7 @@ export default function NavBurger(props: NavBurgerProps) {
         <div
           className={`${burgerLine} ${toggleMenu ? 'opacity-0' : 'opacity-50 group-hover:opacity-100'}`}
         />
-        <NavBurgerLine burgerLine={burgerLine} toggleMenu={toggleMenu} />
+        <NavBurgerLine burgerLine={burgerLine} invert={true} toggleMenu={toggleMenu} />
       </button>
     </div>
   )

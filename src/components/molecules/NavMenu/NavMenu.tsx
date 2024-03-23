@@ -7,7 +7,7 @@ export default function NavMenu() {
   return (
     <nav className="w-100 px-8 md:px-auto flex justify-between">
       <NavMobile />
-      <div className="order-2 h-16 mx-auto md:px-4 container flex items-center lg:justify-between justify-end flex-wrap md:flex-nowrap text-lg">
+      <div className="order-2 h-10 mx-auto md:px-4 container flex items-center lg:justify-between justify-end flex-wrap md:flex-nowrap text-lg">
         <div className="hidden lg:flex primary font-bold md:order-1">
           <NavHome />
         </div>
