@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '../styles/_variables.module.scss';
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+.section-dark {
+  background-color: $dark-bg;
+  color: $dark-bg-text
+}
+
+.section-light {
+  background-color: $light-bg;
+  color: $light-bg-text
+}
+
+a, .btn-link {
+  text-decoration: none;
+  color: $primary;
+
+  &:link, &:active, &:visited {
+    color: $primary;
+  }
+
+  &:hover {
+    color: $primaryHover;
+  }
+}
+
+.hover-color *:hover {
+  color: $primaryHover;
+  fill: $primaryHover;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  // background: linear-gradient(
+  //     to bottom,
+  //     transparent,
+  //     rgb(var(--background-end-rgb))
+  //   )
+  //   rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

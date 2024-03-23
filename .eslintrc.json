@@ -14,4 +14,8 @@
       "version": "detect"
     }
   }
+  // "rules": {
+  //   "indent": "off",
+  //   "@typescript-eslint/indent": "off"
+  // }
 }
