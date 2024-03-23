@@ -1,11 +1,9 @@
 import MyAccount from '@/components/molecules/MyAccount/MyAccount'
-import { useState } from 'react'
 import NavLinks from './NavLinks'
 import NavHome from './NavHome'
-
 import NavMobile from './NavMobile'
 
-export default function NavRoot() {
+export default function NavMenu() {
   return (
     <nav className="w-100 px-8 md:px-auto flex justify-between">
       <NavMobile />
