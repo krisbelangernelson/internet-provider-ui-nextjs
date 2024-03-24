@@ -1,20 +1,18 @@
-// import HeroSection from './HeroSection'
+import HeroSection from './HeroSection'
+import WhyChooseUs from './WhyChooseUs'
 // import FeaturesSummary from './FeaturesSummary'
 // import Features from './Features'
-// import WhyChooseUs from './WhyChooseUs'
 // import FeaturesSummaryMore from './FeaturesSummaryMore'
 // import FeaturesMore from './FeaturesMore'
 // import Testimonials from './Testimonials'
 // import GetConnected from './GetConnected'
 
-import HeroSection from './HeroSection'
-
 export default function Home() {
   return (
     <>
       <HeroSection />
-      {/* <WhyChooseUs />
-      <FeaturesSummary />
+      <WhyChooseUs />
+      {/* <FeaturesSummary />
       <Features />
       <FeaturesSummaryMore />
       <FeaturesMore />

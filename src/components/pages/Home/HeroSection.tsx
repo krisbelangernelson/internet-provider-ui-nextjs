@@ -1,5 +1,5 @@
-import HeroDesktop from '@/assets/images/hero-woman-350px.jpg'
-import HeroMobile from '@/assets/images/hero-woman-200px.jpg'
+import HeroDesktop from '@public/assets/images/hero-woman-350px.jpg'
+import HeroMobile from '@public/assets/images/hero-woman-200px.jpg'
 import './HeroSection.scss'
 import HeroCTA from './HeroCTA'
 import Image from 'next/image'

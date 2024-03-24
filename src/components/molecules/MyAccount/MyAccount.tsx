@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ROUTES } from '@/constants'
-import Person from '@/assets/icons/person-circle.svg'
+import Person from '@public/assets/icons/person-circle.svg'
 
 export default function MyAccount() {
   return (
