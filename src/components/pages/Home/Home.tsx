@@ -1,6 +1,6 @@
 import HeroSection from './HeroSection'
 import WhyChooseUs from './WhyChooseUs'
-// import FeaturesSummary from './FeaturesSummary'
+import FeaturesSummary from './FeaturesSummary'
 // import Features from './Features'
 // import FeaturesSummaryMore from './FeaturesSummaryMore'
 // import FeaturesMore from './FeaturesMore'
@@ -12,8 +12,8 @@ export default function Home() {
     <>
       <HeroSection />
       <WhyChooseUs />
-      {/* <FeaturesSummary />
-      <Features />
+      <FeaturesSummary />
+      {/* <Features />
       <FeaturesSummaryMore />
       <FeaturesMore />
       <Testimonials />
