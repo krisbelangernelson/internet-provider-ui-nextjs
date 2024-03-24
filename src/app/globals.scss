@@ -10,6 +10,10 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+.primary {
+  color: $primary
+}
+
 .section-dark {
   background-color: $dark-bg;
   color: $dark-bg-text
@@ -60,4 +64,89 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+
+  @media (min-width: 768px) {
+    font-size: 2.6rem;
+    font-weight: 500;
+    line-height: 3rem;
+  }
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+
+  @media (min-width: 768px) {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+}
+
+h4 {
+  font-size: 1.3rem;
+  font-weight: 500;
+
+  @media (min-width: 768px) {
+    
+  }
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  @media (min-width: 768px) {
+    
+  }
+}
+
+.btn {
+	display: inline-block;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	text-align: center;
+	-webkit-text-decoration: none;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	border-radius: 0.375rem;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-primary {
+  @extend .btn;
+  background-color: $primary;
+  color: #fff;
+  font-weight: 500;
+  border-color: $primary;
+
+  &:hover {
+    background-color: $primaryHover;
+  }
+}
+
+.btn-primary-outline {
+  @extend .btn-primary;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $primary;
+  }
+}
+
+.shadow-lg {
+  box-shadow: 0 0.5rem 1rem rgba(#000, .5) !important
 }

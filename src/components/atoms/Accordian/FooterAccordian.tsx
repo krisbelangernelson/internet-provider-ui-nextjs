@@ -21,6 +21,7 @@ export default function FooterAccordian(props: AccordionProps) {
         checked={open}
         type="checkbox"
         className="peer sr-only"
+        onChange={() => { }}
       />
       <label
         htmlFor="expandCollapse"

@@ -1,24 +1,23 @@
-// import HeroSection from './HeroSection'
-// import FeaturesSummary from './FeaturesSummary'
-// import Features from './Features'
-// import WhyChooseUs from './WhyChooseUs'
-// import FeaturesSummaryMore from './FeaturesSummaryMore'
-// import FeaturesMore from './FeaturesMore'
-// import Testimonials from './Testimonials'
-// import GetConnected from './GetConnected'
+import HeroSection from './HeroSection'
+import WhyChooseUs from './WhyChooseUs'
+import FeaturesSummaryUnleash from './FeaturesSummaryUnleash'
+import FeaturesUnleash from './FeaturesUnleash'
+import FeaturesSummarySpeed from './FeaturesSummarySpeed'
+import FeaturesSpeed from './FeaturesSpeed'
+import Testimonials from './Testimonials'
+import GetConnected from './GetConnected'
 
 export default function Home() {
   return (
     <>
-      Home
-      {/* <HeroSection />
+      <HeroSection />
       <WhyChooseUs />
-      <FeaturesSummary />
-      <Features />
-      <FeaturesSummaryMore />
-      <FeaturesMore />
+      <FeaturesSummaryUnleash />
+      <FeaturesUnleash />
+      <FeaturesSummarySpeed dark={true} />
+      <FeaturesSpeed dark={true} />
       <Testimonials />
-      <GetConnected /> */}
+      <GetConnected />
     </>
   )
 }
