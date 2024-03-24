@@ -8,7 +8,6 @@ interface NavBurgerLineProps {
 
 export default function NavBurgerLine(props: NavBurgerLineProps) {
   const { burgerLine, toggleMenu, invert } = props
-  console.log('invert', invert)
 
   const inverted = () => invert === true ? '-' : ''
 

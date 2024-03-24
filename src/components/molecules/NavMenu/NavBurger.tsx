@@ -10,12 +10,12 @@ interface NavBurgerProps {
 export default function NavBurger(props: NavBurgerProps) {
   const { setToggleMenu, toggleMenu } = props
 
-  const burgerLine = 'h-1 w-6 my-1 rounded-full bg-black transition ease transform duration-300 bg-primary'
+  const burgerLine = 'h-1 w-6 my-1 rounded-full transition ease transform duration-300 bg-primary'
 
   return (
     <div className="flex items-center justify-center">
       <button
-        className="flex flex-col h-12 w-12 border-2 border-black rounded justify-center items-center group border-primary"
+        className="flex flex-col h-12 w-12 border-2 border-black rounded justify-center items-center group"
         onClick={() => setToggleMenu(!toggleMenu)}
       >
         <NavBurgerLine burgerLine={burgerLine} toggleMenu={toggleMenu} />

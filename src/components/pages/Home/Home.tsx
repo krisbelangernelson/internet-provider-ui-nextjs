@@ -7,12 +7,13 @@
 // import Testimonials from './Testimonials'
 // import GetConnected from './GetConnected'
 
+import HeroSection from './HeroSection'
+
 export default function Home() {
   return (
     <>
-      Home
-      {/* <HeroSection />
-      <WhyChooseUs />
+      <HeroSection />
+      {/* <WhyChooseUs />
       <FeaturesSummary />
       <Features />
       <FeaturesSummaryMore />
