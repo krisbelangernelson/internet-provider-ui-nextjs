@@ -1,9 +1,9 @@
 import HeroSection from './HeroSection'
 import WhyChooseUs from './WhyChooseUs'
-import FeaturesSummary from './FeaturesSummary'
-// import Features from './Features'
-// import FeaturesSummaryMore from './FeaturesSummaryMore'
-// import FeaturesMore from './FeaturesMore'
+import FeaturesSummaryUnleash from './FeaturesSummaryUnleash'
+import FeaturesUnleash from './FeaturesUnleash'
+import FeaturesSummarySpeed from './FeaturesSummarySpeed'
+import FeaturesSpeed from './FeaturesSpeed'
 // import Testimonials from './Testimonials'
 // import GetConnected from './GetConnected'
 
@@ -12,11 +12,11 @@ export default function Home() {
     <>
       <HeroSection />
       <WhyChooseUs />
-      <FeaturesSummary />
-      {/* <Features />
-      <FeaturesSummaryMore />
-      <FeaturesMore />
-      <Testimonials />
+      <FeaturesSummaryUnleash />
+      <FeaturesUnleash />
+      <FeaturesSummarySpeed dark={true} />
+      <FeaturesSpeed dark={true} />
+      {/* <Testimonials />
       <GetConnected /> */}
     </>
   )

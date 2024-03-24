@@ -15,7 +15,7 @@ export default function WhyChooseUs() {
           <div className="text-center grid md:grid-cols-12">
             <div className="md:col-start-3 md:col-span-8 lg:col-start-4 lg:col-span-6 2xl:col-start-5 2xl:col-span-4">
               <div className="grid gap-4">
-                <h1 className="primary" style={{ fontSize: '3rem' }}>
+                <h1 className="primary">
                   Why choose us?
                 </h1>
                 <p className="text-start">
