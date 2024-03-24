@@ -6,11 +6,11 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <section className="section-dark md:pb-5">
+    <section className="section-dark md:pb-5 flex justify-center">
       <div className="container lg:px-16">
-        <div className="flex flex-row">
+        <div className="">
           <div className="text-center mb-4">
-            <div className="flex flex-col lg:flex-row justify-center items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
               <div className="px-3">
                 <h1>
                   <span className="primary">Unleash</span>
