@@ -6,7 +6,7 @@ import FeaturesSummaryItem from './FeatureSummaryItem'
 export default function FeaturesSummary() {
   return (
     <section className="section-light features-summary">
-      <div className="flex flex-col lg:flex-row mt-4">
+      <div className="flex flex-col lg:flex-row">
         <div className="flex-col text-center my-4">
           <h1 className="primary mb-4">Unleash the Potential</h1>
           <div className="item-container grid grid-cols-1 lg:grid-cols-3 px-4 lg:px-8 gap-4 lg:gap-4">

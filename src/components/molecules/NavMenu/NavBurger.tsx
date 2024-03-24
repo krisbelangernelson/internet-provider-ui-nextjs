@@ -1,6 +1,5 @@
 'use client'
 import { Dispatch, SetStateAction } from 'react'
-import NavBurgerLine from './NavBurgerLine'
 
 interface NavBurgerProps {
   toggleMenu: boolean
@@ -18,11 +17,19 @@ export default function NavBurger(props: NavBurgerProps) {
         className="flex flex-col h-12 w-12 border-2 border-black rounded justify-center items-center group"
         onClick={() => setToggleMenu(!toggleMenu)}
       >
-        <NavBurgerLine burgerLine={burgerLine} toggleMenu={toggleMenu} />
+        <div
+          className={`${burgerLine} ${toggleMenu
+            ? 'rotate-45 translate-y-3 opacity-100'
+            : 'opacity-100'}`}
+        />
         <div
           className={`${burgerLine} ${toggleMenu ? 'opacity-0' : 'opacity-100'}`}
         />
-        <NavBurgerLine burgerLine={burgerLine} invert={true} toggleMenu={toggleMenu} />
+        <div
+          className={`${burgerLine} ${toggleMenu
+            ? '-rotate-45 -translate-y-3 opacity-100'
+            : 'opacity-100'}`}
+        />
       </button>
     </div>
   )

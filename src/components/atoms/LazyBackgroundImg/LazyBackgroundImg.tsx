@@ -1,7 +1,6 @@
 'use client'
 
-import Image, { StaticImageData } from 'next/image'
-import { useState, type ReactNode } from 'react'
+import { type ReactNode } from 'react'
 
 interface Props {
   img: string
@@ -12,11 +11,6 @@ interface Props {
 
 export default function LazyBackgroundImg(props: Props) {
   const { img, children, style, isDarkened } = props
-  const [loaded, setLoaded] = useState(false)
-
-  const handleLoad = () => {
-    setLoaded(true)
-  }
 
   return (
     <div
@@ -29,7 +23,6 @@ export default function LazyBackgroundImg(props: Props) {
         ...style,
       }}
     >
-
       {children}
     </div>
   )

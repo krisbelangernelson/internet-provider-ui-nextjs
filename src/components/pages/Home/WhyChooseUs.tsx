@@ -25,7 +25,7 @@ export default function WhyChooseUs() {
                   fast-paced online games. With Ping!, you can finally unleash the full potential of your internet
                   connection and connect to what matters most.
                 </p>
-                <div className="justify-center">
+                <div className="justify-center mb-4">
                   <button
                     type="button"
                     className="btn-primary"
