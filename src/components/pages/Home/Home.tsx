@@ -4,8 +4,8 @@ import FeaturesSummaryUnleash from './FeaturesSummaryUnleash'
 import FeaturesUnleash from './FeaturesUnleash'
 import FeaturesSummarySpeed from './FeaturesSummarySpeed'
 import FeaturesSpeed from './FeaturesSpeed'
-// import Testimonials from './Testimonials'
-// import GetConnected from './GetConnected'
+import Testimonials from './Testimonials'
+import GetConnected from './GetConnected'
 
 export default function Home() {
   return (
@@ -16,8 +16,8 @@ export default function Home() {
       <FeaturesUnleash />
       <FeaturesSummarySpeed dark={true} />
       <FeaturesSpeed dark={true} />
-      {/* <Testimonials />
-      <GetConnected /> */}
+      <Testimonials />
+      <GetConnected />
     </>
   )
 }

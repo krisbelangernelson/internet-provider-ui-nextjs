@@ -1,7 +1,3 @@
-import SpeedImg from '@public/assets/images/speed.jpg'
-import WifiImg from '@public/assets/images/connect-wifi.jpg'
-import SupportImg from '@public/assets/images/support.jpg'
-import FeaturesItem from './FeaturesItem'
 import { type ReactNode } from 'react'
 
 interface FeaturesProps {
