@@ -135,6 +135,7 @@ h5 {
 
   &:hover {
     background-color: $primaryHover;
+    border-color: $primaryHover;
   }
 }
 
@@ -144,6 +145,19 @@ h5 {
 
   &:hover {
     background-color: $primary;
+  }
+}
+
+.btn-secondary {
+  @extend .btn;
+  background-color: #6c757d;
+  color: #fff;
+  font-weight: 500;
+  border-color: #6c757d;
+
+  &:hover {
+    background-color: #5c636a;
+    border-color: #565e64;
   }
 }
 
