@@ -1,9 +1,23 @@
-export default function Internet() {
+import Internet from '@/components/pages/Internet/Internet'
+import { Suspense } from 'react'
+import CustomerProvider from '@/providers/customer/CustomerProvider'
+
+const findAll = async () => {
+  const res = await fetch(`${process.env.INTERNET_API}/internet-services`)
+
+  if (!res.ok) {
+    throw new Error('Failed to GET findAll for internet-services')
+  }
+
+  return res.json()
+}
+
+export default async function InternetPage() {
+  const data = await findAll()
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        Internet
-      </div>
-    </main>
+    <Suspense fallback={<p>Loading data...</p>}>
+      <CustomerProvider><Internet data={data} /></CustomerProvider>
+    </Suspense>
   )
 }
