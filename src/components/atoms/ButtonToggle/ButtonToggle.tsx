@@ -11,7 +11,7 @@ export default function ButtonToggle(props: ButtonToggleProps) {
 
   return (
     <button
-      className={`${active ? 'btn-primary' : 'btn-secondary'} ${full === true ? 'w-full' : ''} text-2xl h-[3rem] `}
+      className={`${active ? 'btn-primary' : 'btn-secondary'} ${full === true ? 'w-full' : ''} text-2xl h-[3rem]`}
       onClick={() => {
         onClick(name)
       }}

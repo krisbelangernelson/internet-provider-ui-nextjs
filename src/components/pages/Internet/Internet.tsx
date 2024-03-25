@@ -3,7 +3,6 @@
 import { useState, useMemo } from 'react'
 import ServiceSelection from '@/components/molecules/ServiceSelection/ServiceSelection'
 import SpeedSelection from '@/components/molecules/SpeedSelection/SpeedSelection'
-// import { useQuery } from '@tanstack/react-query'
 // import internetService from '@/services/internetService'
 import { INTERNET_PAGE } from '@/constants'
 import Loading from '@/components/atoms/SpinnerIcon/SpinnerIcon'
@@ -28,15 +27,16 @@ export default function Internet(props: InternetProps) {
 
   const sortedOffers = useMemo(() => {
     if (data !== undefined) {
-      let sorted = data.sort((offerA, offerB) => {
-        const a = offerA.bandwidth_down
-        const b = offerB.bandwidth_down
-        return Number(a) - Number(b)
-      })
       if (serviceSelected !== '') {
+        let sorted = data.sort((offerA, offerB) => {
+          const a = Number(offerA.bandwidth_down)
+          const b = Number(offerB.bandwidth_down)
+          return a - b
+        })
         sorted = sorted.filter(offer => offer.category === serviceSelected)
+        return sorted
       }
-      return sorted
+      return []
     }
   }, [data, serviceSelected])
 
@@ -64,7 +64,7 @@ export default function Internet(props: InternetProps) {
       </div>
       <div className="flex flex-row mb-2 align-items-center">
         <div className="flex-col">
-          <span className="text-3xl">{INTERNET_PAGE.chooseService}</span>
+          <span className="text-2xl md:text-3xl">{INTERNET_PAGE.chooseService}</span>
         </div>
       </div>
       <div className="my-6">
@@ -72,7 +72,7 @@ export default function Internet(props: InternetProps) {
       </div>
       <div className={`grid md:grid-cols-2 mb-2 ${disabledStyle}`}>
         <div className="flex flex-col">
-          <span className="text-3xl">{INTERNET_PAGE.chooseSpeed}</span>
+          <span className="text-2xl md:text-3xl">{INTERNET_PAGE.chooseSpeed}</span>
         </div>
         <div className="flex justify-center md:justify-end">
           <div className="flex justify-content-end fs-6 pe-1">

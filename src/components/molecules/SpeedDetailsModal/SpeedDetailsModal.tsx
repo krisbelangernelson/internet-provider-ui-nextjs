@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import CloseButton from '@/components/atoms/CloseButton/CloseButton'
 import { HELP_CHOOSE_HEADERS } from '@/constants'
 import { InternetService } from '@/types/InternetService'
 
@@ -12,6 +12,8 @@ type Values = Array<string | number>
 
 export default function SpeedDetailsModal(props: ModalProps) {
   const { offers, onHide, show } = props
+
+  if (offers.length < 1) return null
 
   // Transpose array, rows become columns and vice versa
   const groupedOffers = offers.reduce((acc: Record<string, Values>, offer) => {
@@ -28,7 +30,7 @@ export default function SpeedDetailsModal(props: ModalProps) {
     return acc
   }, {})
 
-  const renderRowContent = (header: string): ReactNode => {
+  const renderRowContent = (header: string) => {
     let content
     if (header === HELP_CHOOSE_HEADERS[0]) {
       content = groupedOffers.ideal_num_users.map(numUsers => (
@@ -71,16 +73,11 @@ export default function SpeedDetailsModal(props: ModalProps) {
 
       <div
         id="dialog"
-        className={`${show ? '' : 'hidden'} fixed z-50 md:top-[20rem] left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[56rem] bg-white rounded-md px-8 py-6 space-y-5 drop-shadow-lg`}
+        className={`${show ? '' : 'hidden'} fixed z-50 top-[16rem] md:top-[20rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 md:w-[56rem] bg-white rounded-md px-8 py-6 space-y-5 drop-shadow-lg h-full outline-none overflow-x-auto overflow-y-auto`}
       >
-        <div className="flex items-center justify-between py-2 md:py-2 rounded-t dark:border-gray-600">
+        <div className="flex items-center justify-between py-0 md:py-2 rounded-t dark:border-gray-600">
           <h1 className="text-2xl font-semibold">Choose Your Speed</h1>
-          <button type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal" onClick={() => { onHide() }}>
-            <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-            </svg>
-            <span className="sr-only">Close modal</span>
-          </button>
+          <CloseButton onClick={() => { onHide() }} />
         </div>
         <div className="py-5 border-t border-b border-gray-300">
           <p>
@@ -88,12 +85,12 @@ export default function SpeedDetailsModal(props: ModalProps) {
             devices each person will be using. Here is a table to make sense of what your needs are and the speed you
             should probably choose. All packages have unlimited download and upload limits.
           </p>
-          <table className="min-w-full mt-4">
+          <table className="min-w-full mt-4 overflow-scroll">
             <thead className="border-b">
               <tr>
                 <th></th>
                 {groupedOffers.bandwidth_down.map((bandwidth, index) => (
-                  <th key={bandwidth} style={{ fontWeight: 'normal' }}>
+                  <th key={bandwidth} className="font-normal">
                     <div className="text-center">
                       <div className="text-4xl" style={{ margin: 0 }}>
                         {bandwidth}
@@ -113,7 +110,7 @@ export default function SpeedDetailsModal(props: ModalProps) {
             </thead>
             <tbody>
               {HELP_CHOOSE_HEADERS.map(header => (
-                <tr key={header}>
+                <tr key={header} className="border-b">
                   <td>{header}</td>
                   {renderRowContent(header)}
                 </tr>

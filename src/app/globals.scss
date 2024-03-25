@@ -164,3 +164,8 @@ h5 {
 .shadow-lg {
   box-shadow: 0 0.5rem 1rem rgba(#000, .5) !important
 }
+
+.disabled-look {
+  color: #ddd !important;
+  pointer-events: none;
+}
