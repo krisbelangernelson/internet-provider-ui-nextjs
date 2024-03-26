@@ -109,8 +109,8 @@ export default function SpeedDetailsModal(props: ModalProps) {
               </tr>
             </thead>
             <tbody>
-              {HELP_CHOOSE_HEADERS.map(header => (
-                <tr key={header} className="border-b">
+              {HELP_CHOOSE_HEADERS.map((header, i) => (
+                <tr key={header} className={`border-b ${i % 2 === 0 ? 'bg-gray-100' : ''}`}>
                   <td>{header}</td>
                   {renderRowContent(header)}
                 </tr>

@@ -5,9 +5,9 @@ import ServiceSelection from '@/components/molecules/ServiceSelection/ServiceSel
 import SpeedSelection from '@/components/molecules/SpeedSelection/SpeedSelection'
 // import internetService from '@/services/internetService'
 import { INTERNET_PAGE } from '@/constants'
-import Loading from '@/components/atoms/SpinnerIcon/SpinnerIcon'
 import HelpMeChoose from '@/components/molecules/HelpMeChoose/HelpMeChoose'
 import { InternetService } from '@/types/InternetService'
+import Loading from '@/components/atoms/Loading/Loading'
 // import Error from '@/components/atoms/Error/Error'
 
 interface InternetProps {
