@@ -3,12 +3,10 @@
 import { useState, useMemo } from 'react'
 import ServiceSelection from '@/components/molecules/ServiceSelection/ServiceSelection'
 import SpeedSelection from '@/components/molecules/SpeedSelection/SpeedSelection'
-// import internetService from '@/services/internetService'
 import { INTERNET_PAGE } from '@/constants'
 import HelpMeChoose from '@/components/molecules/HelpMeChoose/HelpMeChoose'
 import { InternetService } from '@/types/InternetService'
 import Loading from '@/components/atoms/Loading/Loading'
-// import Error from '@/components/atoms/Error/Error'
 
 interface InternetProps {
   data: InternetService[]
@@ -17,13 +15,6 @@ interface InternetProps {
 export default function Internet(props: InternetProps) {
   const { data } = props
   const [serviceSelected, setServiceSelected] = useState<string>('')
-
-  // const { data, isLoading, isError, error } = useQuery({
-  //   queryKey: ['internet-services'],
-  //   queryFn: internetService.findAll,
-  //   enabled: true,
-  //   retry: false,
-  // })
 
   const sortedOffers = useMemo(() => {
     if (data !== undefined) {
@@ -45,17 +36,9 @@ export default function Internet(props: InternetProps) {
     return ''
   }, [serviceSelected])
 
-  // if ((isLoading || sortedOffers === undefined) && !isError) {
-  //   return <Loading />
-  // }
   if (sortedOffers === undefined) {
     return <Loading />
   }
-
-  // if (isError || sortedOffers === undefined) {
-  //   // return <Error title="API Error" error={error} caller="Internet" />
-  //   throw new Error('API Error')
-  // }
 
   return (
     <div className="container md:w-[48rem] my-4 mx-auto  px-6">

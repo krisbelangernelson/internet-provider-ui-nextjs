@@ -1,6 +1,7 @@
 'use client' // Error components must be Client Components
 
 import { useEffect } from 'react'
+import ErrorDisplay from '@/components/atoms/Error/Error'
 
 export default function Error({
   error,
@@ -15,8 +16,8 @@ export default function Error({
   }, [error])
 
   return (
-    <div>
-      <h2>Something went wrong!</h2>
+    <div className="container text-center mx-auto mt-6">
+      <ErrorDisplay title="Error" />
       <button
         onClick={
           // Attempt to recover by trying to re-render the segment
