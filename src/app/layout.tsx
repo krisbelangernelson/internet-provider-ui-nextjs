@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex flex-col h-dvh">
+        <div className="flex flex-col h-screen">
           {/* <StickyAlert text={alertMsg} variant="danger" /> */}
           <Header />
           <main id="page-content">{children}</main>
