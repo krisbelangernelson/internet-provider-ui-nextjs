@@ -13,9 +13,13 @@
     "react": {
       "version": "detect"
     }
+  },
+  "rules": {
+    // "indent": "off",
+    // "@typescript-eslint/indent": "off"
+    "@stylistic/indent": 0, // conflicts with auto-format on save from eslint
+    "@stylistic/brace-style": ["error", "1tbs", {
+      "allowSingleLine": true
+    }]
   }
-  // "rules": {
-  //   "indent": "off",
-  //   "@typescript-eslint/indent": "off"
-  // }
 }

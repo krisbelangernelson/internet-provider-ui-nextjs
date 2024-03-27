@@ -17,9 +17,9 @@ export default function Card(props: CardProps) {
           <h3 className="primary font-semibold text-2xl">{header}</h3>
         </div>
         <div className="px-6 py-4">
-          <p className="text-sky-800 text-lg">
+          <div className="text-sky-800 text-lg">
             {children}
-          </p>
+          </div>
         </div>
         <div className="px-6 py-4 border-t border-stone-200 text-md font-medium  text-blue-400 bg-slate-50">
           {footer}

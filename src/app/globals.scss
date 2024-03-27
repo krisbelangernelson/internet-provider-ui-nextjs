@@ -139,6 +139,17 @@ h5 {
   }
 }
 
+.btn-primary-disabled {
+  @extend .btn-primary;
+  background-color: #cfc2aa;
+  border-color: #cfc2aa;
+
+  &:hover {
+    background-color: #cfc2aa;
+    border-color: #cfc2aa;
+  }
+}
+
 .btn-primary-outline {
   @extend .btn-primary;
   background-color: transparent;

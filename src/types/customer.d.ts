@@ -44,7 +44,7 @@ export interface CustomerResponse extends Customer {
   id: string
 }
 
-export interface CustomerLogin {
+export interface CustomerLoginBody {
   email: string
   password: string
 }

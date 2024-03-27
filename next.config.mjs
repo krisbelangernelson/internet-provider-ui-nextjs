@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // reactStrictMode: true,
+  // distDir: 'dist',
+  // output: 'export',
+  // experimental: {
+  //   ppr: true,
+  // },
   webpack(config) {
     config.module.rules.push({
       loader: '@svgr/webpack',
