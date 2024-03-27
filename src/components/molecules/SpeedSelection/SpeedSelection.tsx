@@ -16,19 +16,13 @@ export default function SpeedSelection(props: SpeedSelectionProps) {
   const { serviceSelected, speedOffers } = props
   const router = useRouter()
   const { setServiceSelection } = useCustomerContext()
-  const [speedSelected, setSpeedSelected] = useState<number | null>(null)
 
   const handleSpeedSelection = (offerId: number, offerName: string): void => {
-    setSpeedSelected(offerId)
     if (serviceSelected !== '' && offerId !== null) {
       setServiceSelection({ serviceType: serviceSelected, offerId, offerName })
       router.push(ROUTES.order)
     }
   }
-
-  useEffect(() => {
-    setSpeedSelected(null)
-  }, [serviceSelected])
 
   if (serviceSelected === '') return <></>
 

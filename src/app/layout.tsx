@@ -4,6 +4,7 @@ import './globals.scss'
 import { type ReactNode } from 'react'
 import Header from '@/components/organisms/Header/Header'
 import Footer from '@/components/organisms/Footer/Footer'
+import CustomerProvider from '@/providers/customer/CustomerProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,15 +19,17 @@ export default function RootLayout({
   children: ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div className="flex flex-col h-screen">
-          {/* <StickyAlert text={alertMsg} variant="danger" /> */}
-          <Header />
-          <main id="page-content">{children}</main>
-          <Footer />
-        </div>
-      </body>
-    </html>
+    <CustomerProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <div className="flex flex-col h-screen">
+            {/* <StickyAlert text={alertMsg} variant="danger" /> */}
+            <Header />
+            <main id="page-content">{children}</main>
+            <Footer />
+          </div>
+        </body>
+      </html>
+    </CustomerProvider>
   )
 }

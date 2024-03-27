@@ -22,8 +22,7 @@ export default function SpeedDetailsModal(props: ModalProps) {
     keys.forEach((key, index) => {
       if (acc[key] !== undefined) {
         acc[key] = [...acc[key], values[index]]
-      }
-      else {
+      } else {
         acc[key] = [values[index]]
       }
     })
@@ -38,15 +37,13 @@ export default function SpeedDetailsModal(props: ModalProps) {
           {numUsers}
         </td>
       ))
-    }
-    else if (header === HELP_CHOOSE_HEADERS[1]) {
+    } else if (header === HELP_CHOOSE_HEADERS[1]) {
       content = groupedOffers.ideal_num_devices.map(numDevices => (
         <td key={numDevices} className="text-center">
           {numDevices}
         </td>
       ))
-    }
-    else {
+    } else {
       content = groupedOffers.bandwidth_down.map((bandwidth, j) => {
         if (header === HELP_CHOOSE_HEADERS[5]) {
           if (Number(bandwidth) <= 70) {

@@ -16,6 +16,10 @@ Tech used:
 
 `pnpm run dev`
 
+## Deployment
+
+Will deploy to vercel when all the code is updated for Next.js
+
 
 ## Payment testing
 - From https://docs.stripe.com/testing
