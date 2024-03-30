@@ -22,7 +22,7 @@ const useCheckoutForm = (customerId: string | undefined): UseCheckoutForm => {
   const [address, setAddress] = useState<StripeAddress | null>(null)
   const {
     state: {
-      serviceSelection: { offerId },
+      serviceSelection: { serviceType, offerName, offerId },
     },
   } = useCustomerContext()
 
@@ -31,7 +31,7 @@ const useCheckoutForm = (customerId: string | undefined): UseCheckoutForm => {
     if (stripe != null && elements != null) {
       let addressParams = ''
       const customerParam = customerId !== undefined ? `&customer_id=${customerId}` : ''
-      const speedParam = offerId != null ? `&offer_id=${offerId}` : ''
+      const speedParam = offerId != null ? `&offer_id=${offerId}&offer_name=${offerName}&service_type=${serviceType}` : ''
 
       if (address != null) {
         addressParams = new URLSearchParams({

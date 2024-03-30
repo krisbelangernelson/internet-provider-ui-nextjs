@@ -60,3 +60,20 @@ export const registerCustomer = async (body: CustomerRegister): Promise<Register
 
   return res.json()
 }
+
+export const autoLoginCheck = async (): Promise<CustomerResponse | undefined> => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_CUSTOMER_API}/auth/auto-login-check`, {
+    method: 'GET',
+    credentials: 'include',
+  })
+
+  if (!res.ok) {
+    return res.text().then((error) => {
+      console.error('Failed to GET autoLoginCheck')
+      handleFetchError(error, res.statusText, 'autoLoginCheck')
+      return undefined
+    })
+  }
+
+  return res.json()
+}

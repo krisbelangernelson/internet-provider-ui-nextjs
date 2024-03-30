@@ -24,7 +24,8 @@ const useStripeConfig = (): UseStripeConfig => {
           console.error(error) // eslint-disable-line no-console
         })
       }
-    }).catch(() => {
+    }).catch((error) => {
+      console.log('error', error)
       setIsError(true)
     })
   }, [])
