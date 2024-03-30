@@ -10,6 +10,8 @@ import { useNotificationContext } from '@/providers/notification/NotificationCon
 import useStripeConfig from '@/hooks/useStripeConfig'
 import api from '@/utils/api'
 
+// TODO: put stripePromise is Order context to reuse in Order components
+// set alertMsg from there?
 export default function Payment() {
   const [clientSecret, setClientSecret] = useState('')
   const [total, setTotal] = useState(0)
@@ -21,11 +23,12 @@ export default function Payment() {
   } = useCustomerContext()
   const { showErrorNotification } = useNotificationContext()
   const { stripePromise, alertMsg } = useStripeConfig()
+  const validOrder = serviceType !== '' && offerName !== ''
 
-  useRedirect(customer.firstName === '', ROUTES.internet)
+  // useRedirect(!validOrder, ROUTES.internet)
 
   useEffect(() => {
-    if (customer.firstName !== '') {
+    if (validOrder) {
       void api.stripePaymenIntent({
         plan: `${serviceType}-${offerName}`,
       })
@@ -40,7 +43,7 @@ export default function Payment() {
           showErrorNotification({ error: error.message })
         })
     }
-  }, [customer.firstName])
+  }, [validOrder])
 
   return (
     <div className="grid justify-center my-6">

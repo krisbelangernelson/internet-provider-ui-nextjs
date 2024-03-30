@@ -1,8 +1,10 @@
 'use client'
 
-import { ReactNode } from 'react'
-import { MAIN_HEADERS } from '@/constants'
+import { ReactNode, useEffect, useRef, useState } from 'react'
+import { MAIN_HEADERS, ROUTES } from '@/constants'
 import { useCustomerContext } from '@/providers/customer/CustomerContext'
+import { useSearchParams } from 'next/navigation'
+import useRedirect from '@/hooks/useRedirect'
 
 interface Props {
   children: ReactNode
@@ -11,9 +13,26 @@ interface Props {
 export default function OrderLayout({ children }: Props) {
   const {
     state: {
-      serviceSelection: { serviceType, offerName },
+      serviceSelection: { serviceType: serviceTypeState, offerName: offerNameState },
     },
   } = useCustomerContext()
+  const searchParams = useSearchParams()
+  const validOrder = useRef(false)
+  const verified = useRef(false)
+  const [offerName, setOfferName] = useState(offerNameState)
+  const [serviceType, setServiceType] = useState(serviceTypeState)
+
+  // redirect if no plan data
+  useRedirect(verified.current && !validOrder.current, ROUTES.internet)
+
+  useEffect(() => {
+    const offer = searchParams.get('offer_name') ?? offerName
+    const service = searchParams.get('service_type') ?? serviceType
+    validOrder.current = offer !== '' && service !== ''
+    verified.current = true
+    setOfferName(offer)
+    setServiceType(service)
+  }, [])
 
   const title = (
     <>

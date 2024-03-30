@@ -153,9 +153,11 @@ h5 {
 .btn-primary-outline {
   @extend .btn-primary;
   background-color: transparent;
+  color: $primary;
 
   &:hover {
     background-color: $primary;
+    color: #fff;
   }
 }
 
@@ -169,6 +171,30 @@ h5 {
   &:hover {
     background-color: #5c636a;
     border-color: #565e64;
+  }
+}
+
+.btn-success-outline {
+  @extend .btn-primary-outline;
+  border-color: #198754;
+  color: #198754;
+
+  &:hover {
+    background-color: #198754;
+    border-color: #198754;
+    color: #fff;
+  }
+}
+
+.btn-danger-outline {
+  @extend .btn-primary-outline;
+  border-color: #dc3545;
+  color: #dc3545;
+
+  &:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
   }
 }
 
