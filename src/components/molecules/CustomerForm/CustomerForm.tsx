@@ -88,7 +88,6 @@ export default function CustomerForm() {
                 isInvalid={errors.passwordConfirm !== undefined && touched.passwordConfirm}
                 feedback={errors.passwordConfirm}
               />
-
               <div className="grid mb-4">
                 <div className="flex items-center">
                   <input name="terms" id="terms" type="checkbox" onChange={handleChange} value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
@@ -98,18 +97,6 @@ export default function CustomerForm() {
                 </div>
                 {errors.terms !== undefined && touched.terms && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{errors.terms}</p>}
               </div>
-
-              {/* <Form.Group className="mb-3 mt-2">
-                <Form.Check
-                  name="terms"
-                  label={FORMS.terms.label}
-                  onChange={handleChange}
-                  isInvalid={errors.terms !== undefined && touched.terms}
-                  feedback={errors.terms}
-                  feedbackType="invalid"
-                  id="terms"
-                />
-              </Form.Group> */}
               <div className="grid gap-2">
                 <button
                   type="submit"

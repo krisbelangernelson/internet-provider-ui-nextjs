@@ -1,6 +1,22 @@
 import NavMenu from '@/components/molecules/NavMenu/NavMenu'
 
+// TODO: auto login check
 export default function Header() {
+  // const { mutate: autoLoginCheck, isPending } = useMutation({
+  //   mutationFn: async () => await customerService.autoLoginCheck(),
+  //   onError: (error) => {
+  //     showErrorNotification({ title: 'Auth Error', error, caller: 'AppRoutes' })
+  //   },
+  //   onSuccess: (customer) => {
+  //     if (customer.accessToken !== undefined) {
+  //       setCustomer(customer)
+  //     }
+  //   }
+  // })
+
+  // useEffect(() => {
+  //   autoLoginCheck()
+  // }, [])
   return (
     <header className="section-dark">
       <div className="flex flex-row">
