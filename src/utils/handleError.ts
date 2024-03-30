@@ -1,6 +1,6 @@
 import logger from './logger'
 
-export const handleFetchError = (error: string, statusText: string, caller?: string): Error => {
+export const handleFetchError = (error: string, statusText: string, caller?: string): void => {
   let errObj
   try {
     errObj = JSON.parse(error)
@@ -10,7 +10,7 @@ export const handleFetchError = (error: string, statusText: string, caller?: str
     }
   } catch (err) {
     logger.error(statusText, `Caller[${caller}]`)
-    console.error(err)
+    logger.error((err as Error).message)
     throw new Error('API error, please contact support.')
   }
 

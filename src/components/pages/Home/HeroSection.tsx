@@ -34,7 +34,7 @@ export default function HeroSection() {
                     <div id="inner-ring">
                       <div id="inner-ring-filler">
                         <Image src={HeroMobile} alt="Hero Mobile" className="rounded-full lg:hidden" loading="lazy" />
-                        <Image src={HeroDesktop} alt="Hero Mobile" className="rounded-full hidden lg:flex" loading="lazy" />
+                        <Image src={HeroDesktop} alt="Hero Desktop" className="rounded-full hidden lg:flex" placeholder="blur" priority={true} />
                       </div>
                     </div>
                   </div>

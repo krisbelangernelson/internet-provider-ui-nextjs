@@ -1,9 +1,11 @@
-import * as internetServices from './internetApi'
-import * as customerServices from './customerApi'
+import * as internetApi from './internetApi'
+import * as customerApi from './customerApi'
+import * as orderApi from './orderApi'
 
 const api = {
-  ...internetServices,
-  ...customerServices,
+  ...internetApi,
+  ...customerApi,
+  ...orderApi,
 }
 
 export default api
