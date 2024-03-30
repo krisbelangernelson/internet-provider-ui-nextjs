@@ -20,6 +20,7 @@
     "@stylistic/indent": 0, // conflicts with auto-format on save from eslint
     "@stylistic/brace-style": ["error", "1tbs", {
       "allowSingleLine": true
-    }]
+    }],
+    "react-hooks/exhaustive-deps": 0
   }
 }

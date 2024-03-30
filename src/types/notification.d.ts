@@ -5,8 +5,7 @@ export interface NotificationData {
 
 export interface NotificationError {
   title?: string
-  error: Error
-  caller?: string
+  error: string
 }
 
 export interface NotificationState {

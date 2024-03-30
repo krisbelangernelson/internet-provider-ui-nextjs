@@ -9,7 +9,7 @@ interface CustomerProviderProps {
   customState?: CustomerState
 }
 
-const CustomerProvider: FC<CustomerProviderProps> = (props) => {
+export default function CustomerProvider(props: CustomerProviderProps) {
   const { children, customState = initialState } = props
   const [state, setState] = useState(customState)
 
@@ -24,5 +24,3 @@ const CustomerProvider: FC<CustomerProviderProps> = (props) => {
 
   return <CustomerContext.Provider value={{ ...stateReducer, state }}>{children}</CustomerContext.Provider>
 }
-
-export default CustomerProvider
