@@ -3,13 +3,12 @@
 import { useState } from 'react'
 import { useFormik } from 'formik'
 import ButtonSpinner from '@/components/atoms/ButtonSpinner/ButtonSpinner'
-// import { handleAxiosError } from '@/utils/handleError'
 import { loginFormSchema } from '@/utils/validationSchemas'
-import { ROUTES, MAIN_HEADERS, FORMS } from '@/constants'
+import { ROUTES, FORMS } from '@/constants'
 import { useCustomerContext } from '@/providers/customer/CustomerContext'
 import Alert from '@/components/atoms/Alert/Alert'
 import TextInput from '@/components/atoms/TextInput/TextInput'
-import { loginCustomer } from '@/utils/api'
+import api from '@/utils/api'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 const Login = () => {
@@ -25,10 +24,12 @@ const Login = () => {
     validationSchema: loginFormSchema,
     onSubmit: ({ email, password }) => {
       setIsPending(true)
-      loginCustomer({ email, password }).then((data) => {
-        setCustomer(data)
-        setIsPending(false)
-        router.push(from)
+      api.loginCustomer({ email, password }).then((data) => {
+        if (data !== undefined) {
+          setCustomer(data)
+          setIsPending(false)
+          router.push(from)
+        }
       }).catch((error) => {
         setError(error.message)
         setIsPending(false)
@@ -80,7 +81,7 @@ const Login = () => {
                 buttonLabel={FORMS.buttons.login.label}
                 loadingLabel={FORMS.buttons.login.loadingLabel}
               />
-              {error !== '' && <Alert variant="danger">{error}</Alert>}
+              {error !== '' && <div className="mt-3"><Alert variant="danger">{error}</Alert></div>}
             </div>
           </div>
         </div>

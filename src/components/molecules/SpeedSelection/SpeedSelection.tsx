@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import SpeedCard from '@/components/molecules/SpeedCard/SpeedCard'
 import { type InternetService } from '@/types/InternetService'
 import { useRouter } from 'next/navigation'

@@ -11,6 +11,7 @@ Here are the other applications in this service provider project. These APIs are
 Tech used:
 - Typescript React with Next.js
 - TailwindCSS for styling
+- JWT authentication
 
 ## Dev
 
