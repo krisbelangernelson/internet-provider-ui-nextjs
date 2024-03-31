@@ -1,5 +1,6 @@
-import { CustomerExists, CustomerExistsResponse, CustomerLoginBody, CustomerRegister, CustomerResponse, RegisterResponse } from '@/types/customer'
+import { CustomerArea, CustomerExists, CustomerExistsResponse, CustomerLoginBody, CustomerRegister, CustomerResponse, RegisterResponse } from '@/types/customer'
 import { handleFetchError } from '../handleError'
+import logger from '../logger'
 
 export const loginCustomer = async (body: CustomerLoginBody): Promise<CustomerResponse | undefined> => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_CUSTOMER_API}/auth/login`, {
@@ -69,9 +70,43 @@ export const autoLoginCheck = async (): Promise<CustomerResponse | undefined> =>
 
   if (!res.ok) {
     return res.text().then((error) => {
-      console.error('Failed to GET autoLoginCheck')
+      logger.warn('Failed to GET /auth/auto-login-check')
       handleFetchError(error, res.statusText, 'autoLoginCheck')
       return undefined
+    })
+  }
+
+  return res.json()
+}
+
+export const customerArea = async (): Promise<CustomerArea | undefined> => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_CUSTOMER_API}/customer/area`, {
+    method: 'GET',
+    credentials: 'include',
+  })
+
+  if (!res.ok) {
+    return res.text().then((error) => {
+      logger.warn('Failed to GET /customer/area')
+      handleFetchError(error, res.statusText, 'customerArea')
+      return undefined
+    })
+  }
+
+  return res.json()
+}
+
+export const logout = async (): Promise<object | undefined> => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_CUSTOMER_API}/auth/logout`, {
+    method: 'GET',
+    credentials: 'include',
+  })
+
+  if (!res.ok) {
+    return res.text().then((error) => {
+      logger.warn('Failed to GET /auth/logout')
+      logger.error(error)
+      return {}
     })
   }
 

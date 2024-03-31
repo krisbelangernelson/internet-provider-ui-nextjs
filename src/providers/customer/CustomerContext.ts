@@ -12,6 +12,7 @@ export const initialState: CustomerState = {
 
 export const CustomerContext = createContext<CustomerContextType>({
   state: initialState,
+  clearCustomer: () => undefined,
   setCustomer: () => undefined,
   setServiceSelection: () => undefined,
 })

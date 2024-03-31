@@ -6,7 +6,7 @@ export const stripeConfig = async (): Promise<StripeConfig | undefined> => {
 
   if (!res.ok) {
     return res.text().then((error) => {
-      console.error('Failed to GET stripeConfig')
+      console.warn('Failed to GET /stripe/config')
       handleFetchError(error, res.statusText, 'stripePaymenIntent')
       return undefined
     })

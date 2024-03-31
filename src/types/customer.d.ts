@@ -5,6 +5,10 @@ export interface Customer {
   phone: string
 }
 
+export interface CustomerArea extends Customer {
+  id: string
+}
+
 interface CustomerFormikValues extends Customer {
   password: string
   passwordConfirm: string
@@ -71,6 +75,7 @@ export interface CustomerState {
 
 export interface CustomerContextType {
   state: CustomerState
+  clearCustomer: () => void
   setCustomer: (customerInfo: CustomerResponse) => void
   setServiceSelection: (serviceSelection: ServiceSelection) => void
 }
