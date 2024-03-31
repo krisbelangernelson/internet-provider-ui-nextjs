@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, type FC, type ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import { initialState, CustomerContext } from '@/providers/customer/CustomerContext'
 import type { ServiceSelection, CustomerState, CustomerResponse } from '@/types/customer'
 
@@ -14,6 +14,9 @@ export default function CustomerProvider(props: CustomerProviderProps) {
   const [state, setState] = useState(customState)
 
   const stateReducer = {
+    clearCustomer: () => {
+      setState((state: CustomerState) => ({ ...state, ...initialState }))
+    },
     setCustomer: (customerInfo: CustomerResponse) => {
       setState((state: CustomerState) => ({ ...state, customerInfo }))
     },

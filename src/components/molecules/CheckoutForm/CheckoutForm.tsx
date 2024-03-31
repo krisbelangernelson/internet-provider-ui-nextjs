@@ -25,12 +25,14 @@ export default function CheckoutForm({ customerId }: CheckoutFormProps) {
         }}
       />
       <PaymentElement id="payment-element" className="mt-2" />
-      <ButtonSpinner
-        isDisabled={stripe == null || elements == null}
-        isLoading={isProcessing}
-        buttonLabel={FORMS.buttons.payment.label}
-        loadingLabel={FORMS.buttons.payment.loadingLabel}
-      />
+      <div className="mt-4">
+        <ButtonSpinner
+          isDisabled={stripe == null || elements == null}
+          isLoading={isProcessing}
+          buttonLabel={FORMS.buttons.payment.label}
+          loadingLabel={FORMS.buttons.payment.loadingLabel}
+        />
+      </div>
       {message != null && <div id="payment-message">{message}</div>}
     </form>
   )

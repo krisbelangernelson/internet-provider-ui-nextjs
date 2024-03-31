@@ -8,8 +8,8 @@ import useStripeConfig from '@/hooks/useStripeConfig'
 //   stripePromise: Stripe | null
 // }
 
-// TODO: check if registered user passes (think not)
-// TODO: add login after registration, then payment
+// TODO: put stripePromise is Order context to reuse in Order components
+// set alertMsg from there?
 export default function Completed() {
   const { stripePromise, alertMsg } = useStripeConfig()
 

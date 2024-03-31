@@ -6,6 +6,7 @@ import useCustomerForm from './useCustomerForm'
 import TextInput from '@/components/atoms/TextInput/TextInput'
 import Alert from '@/components/atoms/Alert/Alert'
 
+// TODO: add login after registration, then payment
 export default function CustomerForm() {
   const { data, handlers } = useCustomerForm()
   const { isError, errors, isPending, touched, values } = data
@@ -97,7 +98,7 @@ export default function CustomerForm() {
                 </div>
                 {errors.terms !== undefined && touched.terms && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{errors.terms}</p>}
               </div>
-              <div className="grid gap-2">
+              <div className="grid gap-2 text-center">
                 <button
                   type="submit"
                   className="btn-primary"
