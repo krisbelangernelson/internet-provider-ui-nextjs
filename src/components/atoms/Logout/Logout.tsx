@@ -11,8 +11,9 @@ export default function Logout() {
     <button
       onClick={() => {
         void api.logout().then(() => {
+          // router.refresh()
+          router.push('/')
           clearCustomer()
-          router.refresh()
         })
       }}
       className="btn-primary"

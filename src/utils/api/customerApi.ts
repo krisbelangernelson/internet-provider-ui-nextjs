@@ -3,7 +3,7 @@ import { handleFetchError } from '../handleError'
 import logger from '../logger'
 
 export const loginCustomer = async (body: CustomerLoginBody): Promise<CustomerResponse | undefined> => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_CUSTOMER_API}/auth/login`, {
+  const res = await fetch('/api/customer/login', {
     method: 'POST',
     body: JSON.stringify(body),
     credentials: 'include',
@@ -14,7 +14,7 @@ export const loginCustomer = async (body: CustomerLoginBody): Promise<CustomerRe
 
   if (!res.ok) {
     return res.text().then((error) => {
-      handleFetchError(error, res.statusText, 'customerExists')
+      handleFetchError(error, res.statusText, 'loginCustomer')
       return undefined
     })
   }
@@ -26,7 +26,6 @@ export const customerExists = async (body: CustomerExists): Promise<CustomerExis
   const res = await fetch(`${process.env.NEXT_PUBLIC_CUSTOMER_API}/customer/exists`, {
     method: 'POST',
     body: JSON.stringify(body),
-    credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -46,7 +45,6 @@ export const registerCustomer = async (body: CustomerRegister): Promise<Register
   const res = await fetch(`${process.env.NEXT_PUBLIC_CUSTOMER_API}/auth/register`, {
     method: 'POST',
     body: JSON.stringify(body),
-    credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -63,10 +61,7 @@ export const registerCustomer = async (body: CustomerRegister): Promise<Register
 }
 
 export const autoLoginCheck = async (): Promise<CustomerResponse | undefined> => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_CUSTOMER_API}/auth/auto-login-check`, {
-    method: 'GET',
-    credentials: 'include',
-  })
+  const res = await fetch('/api/customer/auto-login')
 
   if (!res.ok) {
     return res.text().then((error) => {
@@ -79,10 +74,12 @@ export const autoLoginCheck = async (): Promise<CustomerResponse | undefined> =>
   return res.json()
 }
 
-export const customerArea = async (): Promise<CustomerArea | undefined> => {
+export const customerArea = async (token: string): Promise<CustomerArea | undefined> => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_CUSTOMER_API}/customer/area`, {
     method: 'GET',
-    credentials: 'include',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
   })
 
   if (!res.ok) {
@@ -97,7 +94,7 @@ export const customerArea = async (): Promise<CustomerArea | undefined> => {
 }
 
 export const logout = async (): Promise<object | undefined> => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_CUSTOMER_API}/auth/logout`, {
+  const res = await fetch('/api/customer/logout', {
     method: 'GET',
     credentials: 'include',
   })
