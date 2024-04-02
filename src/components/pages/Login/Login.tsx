@@ -26,7 +26,7 @@ const Login = () => {
       setIsPending(true)
       api.loginCustomer({ email, password }).then((data) => {
         if (data !== undefined) {
-          setCustomer(data)
+          setCustomer({ ...data })
           setIsPending(false)
           router.push(from)
         }

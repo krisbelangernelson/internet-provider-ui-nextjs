@@ -20,7 +20,7 @@ export default function ButtonSpinner({ onClick, isDisabled, isLoading, buttonLa
     <button type="submit" className={className} onClick={onClick} disabled={isDisabled} {...rest}>
       {isLoading
         ? (
-          <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center justify-center">
             <SpinnerIcon size="4" />
             <span className="ms-1">{loadingLabel}</span>
           </div>

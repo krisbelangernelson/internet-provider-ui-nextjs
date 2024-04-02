@@ -10,6 +10,8 @@ import { useNotificationContext } from '@/providers/notification/NotificationCon
 import useStripeConfig from '@/hooks/useStripeConfig'
 import api from '@/utils/api'
 
+// TODO: put stripePromise is Order context to reuse in Order components
+// set alertMsg from there?
 export default function Payment() {
   const [clientSecret, setClientSecret] = useState('')
   const [total, setTotal] = useState(0)
@@ -23,7 +25,7 @@ export default function Payment() {
   const { stripePromise, alertMsg } = useStripeConfig()
   const validOrder = serviceType !== '' && offerName !== ''
 
-  // useRedirect(!validOrder, ROUTES.internet)
+  useRedirect(!validOrder, ROUTES.internet)
 
   useEffect(() => {
     if (validOrder) {
