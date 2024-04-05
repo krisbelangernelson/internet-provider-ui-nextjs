@@ -10,7 +10,7 @@ export default function Features(props: FeaturesProps) {
 
   return (
     <section className={`section-${dark ? 'dark' : 'light'} features py-8 px-4 pt-3 lg:pt-5 pb-4 lg:pb-12 flex justify-center`}>
-      <div className="container grid gap-3 lg:gap-5 justify-center">
+      <div className="container grid gap-5 lg:gap-[5rem] justify-center">
         {children}
       </div>
     </section>
