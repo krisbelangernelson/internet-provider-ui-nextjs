@@ -16,14 +16,17 @@ export async function GET() {
       },
     })
     console.log('res', res)
+    console.log('res.ok', res.ok)
 
     if (!res.ok) {
+      console.log('fetch not ok')
       await res.text().then((error) => {
         console.log('error', error)
         data = error
         status = res.status
       })
     } else {
+      console.log('fetch json')
       data = await res.json()
     }
   } catch (error) {
