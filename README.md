@@ -19,7 +19,7 @@ Tech used:
 
 ## Deployment
 
-Will deploy to vercel when all the code is updated for Next.js
+Deployed on vercel: https://internet-provider-ui-nextjs.vercel.app/
 
 
 ## Payment testing
