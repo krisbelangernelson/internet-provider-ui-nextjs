@@ -18,7 +18,7 @@ export default function FeaturesItem(props: FeaturesItemProps) {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 items-center md:gap-4">
-      <div className={`sm:w-[32rem] lg:order-${imageOrder}`}>
+      <div className={`sm:w-[32rem] md:order-${imageOrder}`}>
         <Image
           loading="lazy"
           src={imgSrc}
@@ -26,7 +26,7 @@ export default function FeaturesItem(props: FeaturesItemProps) {
           alt="Feature image"
         />
       </div>
-      <div className={`sm:w-[32rem] text-start p-3 lg:p-5 lg:order-${textOrder}`}>
+      <div className={`sm:w-[32rem] text-start p-3 lg:p-5 md:order-${textOrder}`}>
         <h2>{heading}</h2>
         <p>{subHeading}</p>
         <button
