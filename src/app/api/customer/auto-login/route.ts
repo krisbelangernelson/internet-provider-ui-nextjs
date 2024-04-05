@@ -15,6 +15,7 @@ export async function GET() {
         'Authorization': `Bearer ${token}`,
       },
     })
+    console.log('res', res)
 
     if (!res.ok) {
       await res.text().then((error) => {
