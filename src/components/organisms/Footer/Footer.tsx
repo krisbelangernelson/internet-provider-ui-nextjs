@@ -14,6 +14,7 @@ export default function Footer() {
 
   useEffect(() => {
     if (!customerInfo.accessToken) {
+      console.log('autoLoginCheck')
       void api.autoLoginCheck().then((customer) => {
         if (customer?.accessToken !== undefined) {
           setCustomer(customer)

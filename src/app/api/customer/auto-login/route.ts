@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers'
 
 export async function GET() {
+  console.log('GET auto-login')
   const cookieStore = cookies()
   const token = cookieStore.get('accessToken')?.value ?? ''
   let data
