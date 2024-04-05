@@ -26,8 +26,8 @@ export async function GET() {
         status = res.status
       })
     } else {
-      console.log('fetch json')
-      data = await res.json()
+      if (res.status === 204) data = {}
+      else data = await res.json()
     }
   } catch (error) {
     console.error('error2', error)
