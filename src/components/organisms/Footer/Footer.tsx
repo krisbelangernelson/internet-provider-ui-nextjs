@@ -13,7 +13,7 @@ export default function Footer() {
   const { showErrorNotification } = useNotificationContext()
 
   useEffect(() => {
-    if (!customerInfo.accessToken) {
+    if (customerInfo.accessToken) {
       void api.autoLoginCheck().then((customer) => {
         if (customer?.accessToken !== undefined) {
           setCustomer(customer)

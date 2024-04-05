@@ -1,3 +1,4 @@
+import logger from '@/utils/logger'
 import { cookies } from 'next/headers'
 
 export async function GET() {
@@ -16,12 +17,14 @@ export async function GET() {
 
   if (!res.ok) {
     await res.text().then((error) => {
-      console.log('error', error)
+      logger.error(error)
       data = error
       status = res.status
     })
   } else {
-    data = await res.json()
+    // API must return status 204 or non empty object or .json()=Unexpected end of JSON input
+    if (res.status === 204) data = {}
+    else data = await res.json()
   }
 
   return Response.json({ ...data }, { status })
