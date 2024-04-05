@@ -26,8 +26,8 @@ export async function GET() {
       data = await res.json()
     }
   } catch (error) {
-    console.error('error', error)
-    data = { error: (error as Error).message }
+    console.error('error2', error)
+    data = { message: (error as Error).message }
     status = 500
   }
 

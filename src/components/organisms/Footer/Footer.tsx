@@ -11,6 +11,7 @@ import { useNotificationContext } from '@/providers/notification/NotificationCon
 export default function Footer() {
   const { setCustomer, state: { customerInfo } } = useCustomerContext()
   const { showErrorNotification } = useNotificationContext()
+  console.log('customerInfo', customerInfo)
 
   useEffect(() => {
     if (!customerInfo.accessToken) {
