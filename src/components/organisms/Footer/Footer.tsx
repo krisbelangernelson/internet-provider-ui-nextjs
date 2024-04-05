@@ -11,11 +11,12 @@ import { useNotificationContext } from '@/providers/notification/NotificationCon
 export default function Footer() {
   const { setCustomer, state: { customerInfo } } = useCustomerContext()
   const { showErrorNotification } = useNotificationContext()
-  console.log('customerInfo', customerInfo)
+
+  console.log('customerInfo.accessToken', customerInfo.accessToken)
+  console.log('!customerInfo.accessToken', !customerInfo.accessToken)
 
   useEffect(() => {
     if (!customerInfo.accessToken) {
-      console.log('autoLoginCheck')
       void api.autoLoginCheck().then((customer) => {
         if (customer?.accessToken !== undefined) {
           setCustomer(customer)
