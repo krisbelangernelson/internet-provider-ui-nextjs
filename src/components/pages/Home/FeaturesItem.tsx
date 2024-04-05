@@ -1,7 +1,8 @@
 'use client'
 
+import ImageTransition from '@/components/atoms/ImageTransition/ImageTransition'
 import { ROUTES } from '@/constants'
-import Image, { StaticImageData } from 'next/image'
+import { StaticImageData } from 'next/image'
 import { useRouter } from 'next/navigation'
 
 interface FeaturesItemProps {
@@ -19,12 +20,7 @@ export default function FeaturesItem(props: FeaturesItemProps) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 items-center md:gap-4">
       <div className={`sm:w-[32rem] md:order-${imageOrder}`}>
-        <Image
-          loading="lazy"
-          src={imgSrc}
-          className="rounded-md shadow-lg"
-          alt="Feature image"
-        />
+        <ImageTransition src={imgSrc} alt="Feature image" loading="lazy" className="rounded-md shadow-lg" position={imageOrder} />
       </div>
       <div className={`sm:w-[32rem] text-start p-3 lg:p-5 md:order-${textOrder}`}>
         <h2>{heading}</h2>
