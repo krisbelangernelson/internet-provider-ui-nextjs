@@ -31,6 +31,7 @@ export async function GET() {
     data = { message: (error as Error).message }
     status = 500
   }
+  console.log('data', data)
 
   return Response.json({ ...data }, { status })
 }
