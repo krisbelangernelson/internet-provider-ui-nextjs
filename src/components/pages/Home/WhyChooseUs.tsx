@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
   return (
     <section className="section-dark">
       <LazyBackgroundImg img="/assets/images/why-choose-595h.jpg">
-        <div className="p-5">
+        <div className="p-12">
           <div className="text-center grid md:grid-cols-12">
             <div className="md:col-start-3 md:col-span-8 lg:col-start-4 lg:col-span-6 2xl:col-start-5 2xl:col-span-4">
               <div className="grid gap-4">

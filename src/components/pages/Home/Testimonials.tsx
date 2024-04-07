@@ -2,7 +2,7 @@ import TestimonialsItems from './TestimonialsItems'
 
 export default function Testimonials() {
   return (
-    <section className="section-light testimony flex justify-center py-12">
+    <section className="section-light testimony flex justify-center py-[5rem]">
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-5 xl:gap-x-10 gap-y-3 lg:gap-y-0 pe-5 ps-5 ">
         <TestimonialsItems
           quote="We used to fight over who got to use the internet in our house! Now, with Ping!'s unlimited data plan and powerful Wi-Fi, everyone can stream, game, and browse simultaneously. Plus, the low latency is a dreamfor my son's online gaming - no more lag during crucial moments! We're finally a happy, connected family."
