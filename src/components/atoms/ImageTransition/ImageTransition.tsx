@@ -13,12 +13,12 @@ const ImageTransition = (props: ImageTransitionProps) => {
   const [isReady, setIsReady] = useState(false)
 
   return (
-    <div className={`transition-opacity ease-in delay-700 duration-500 ${isReady ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`transition-opacity ease-in delay-300 duration-500 ${isReady ? 'opacity-100' : 'opacity-0'}`}>
       <NextImage
         {...props}
         src={props.src}
         onLoad={() => { setIsReady(true) }}
-        className={`${props.className} transition-transform ease-in delay-700 duration-500 ${isReady ? '' : `${props.position === 1 ? '-' : ''}translate-x-full`}`}
+        className={`${props.className} transition-transform ease-in delay-300 duration-500 ${isReady ? '' : `${props.position === 1 ? '-' : ''}translate-x-full`}`}
       />
     </div>
   )

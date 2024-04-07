@@ -1,3 +1,4 @@
+import AnimateIn from '@/components/atoms/AnimateIn/AnimateIn'
 import Image, { StaticImageData } from 'next/image'
 
 interface FeaturesSummaryItemProps {
@@ -15,8 +16,11 @@ export default function FeaturesSummaryItem(props: FeaturesSummaryItemProps) {
         <Image src={imgSrc} loading="lazy" alt="Feature image" className="col-span-3 text-end mt-2 justify-self-end me-4" />
 
         <div className="col-span-9 text-start">
-          <h4>{heading}</h4>
-          <p>{subHeading}</p>
+          <AnimateIn>
+            <h4>{heading}</h4>
+            <p>{subHeading}</p>
+          </AnimateIn>
+
         </div>
       </div>
     </div>
