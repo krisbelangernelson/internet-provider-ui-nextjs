@@ -9,7 +9,7 @@ import GetConnected from './GetConnected'
 
 export default function Home() {
   return (
-    <>
+    <div style={{ overflow: 'hidden', width: '100%' }}>
       <HeroSection />
       <WhyChooseUs />
       <FeaturesSummaryUnleash />
@@ -18,6 +18,6 @@ export default function Home() {
       <FeaturesSpeed dark={true} />
       <Testimonials />
       <GetConnected />
-    </>
+    </div>
   )
 }
