@@ -1,6 +1,6 @@
 import logger from './logger'
 
-export const handleFetchError = (error: string, statusText: string, caller?: string): void => {
+export function handleFetchError(error: string, statusText: string, caller?: string): void {
   let errObj
   try {
     errObj = JSON.parse(error)
