@@ -11,14 +11,15 @@ interface ImageTransitionProps {
 
 const ImageTransition = (props: ImageTransitionProps) => {
   const [isReady, setIsReady] = useState(false)
+  const { src, className, position } = props
 
   return (
     <div className={`transition-opacity ease-in delay-300 duration-500 ${isReady ? 'opacity-100' : 'opacity-0'}`}>
       <NextImage
         {...props}
-        src={props.src}
+        src={src}
         onLoad={() => { setIsReady(true) }}
-        className={`${props.className} transition-transform ease-in delay-300 duration-500 ${isReady ? '' : `${props.position === 1 ? '-' : ''}translate-x-full`}`}
+        className={`${className} transition-transform ease-in delay-300 duration-500 ${isReady ? '' : `${position === 1 ? '-' : ''}translate-x-full`}`}
       />
     </div>
   )
