@@ -2,7 +2,7 @@ import { type PaymentIntent } from '@stripe/stripe-js'
 import type { StripePaymentStatus } from '@/types/order'
 
 // TODO: lang/constants
-export function getPaymentStatus(paymentIntent: PaymentIntent | undefined): StripePaymentStatus {
+export function getPaymentStatus(paymentIntent: Partial<PaymentIntent> | undefined): StripePaymentStatus {
   if (paymentIntent != null) {
     switch (paymentIntent.status) {
       case 'succeeded':
