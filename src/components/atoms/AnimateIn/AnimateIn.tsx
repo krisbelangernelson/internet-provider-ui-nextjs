@@ -16,4 +16,4 @@ export default function AnimateIn({ children }: PropsWithChildren) {
       {children}
     </div>
   )
-};
+}

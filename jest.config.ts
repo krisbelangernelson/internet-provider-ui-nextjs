@@ -16,15 +16,31 @@ const config: Config = {
     },
   },
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.(ts|tsx)$': [
+      'ts-jest',
+      {
+        tsconfig: {
+          jsx: 'react-jsx',
+        },
+      },
+    ],
   },
+  testMatch: ['**/?(*.)+(spec|test).ts?(x)'],
+  coveragePathIgnorePatterns: [
+    '<rootDir>/src/hooks/useElementOnScreen.ts', // can't cover observer internals
+  ],
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   clearMocks: true,
   moduleNameMapper: {
     '@/(.*)': '<rootDir>/src/$1',
     '@public/(.*)': '<rootDir>/public/$1',
+    '^.+\\.(css|less)$': '<rootDir>/src/mocks/styleMock.ts',
+
   },
+  setupFilesAfterEnv: [
+    '<rootDir>/jest-setup.ts',
+  ],
 }
 
 export default config
