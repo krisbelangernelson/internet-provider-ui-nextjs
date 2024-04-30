@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { type Stripe, loadStripe } from '@stripe/stripe-js'
 import { APP_ERRORS } from '@/constants'
 import api from '@/utils/api'
+import logger from '@/utils/logger'
 
 interface UseStripeConfig {
   stripePromise: Stripe | null
@@ -21,11 +22,12 @@ const useStripeConfig = (): UseStripeConfig => {
       if (data !== undefined) {
         const { publishableKey } = data
         void stripeLoader(publishableKey).catch((error) => {
-          console.error(error) // eslint-disable-line no-console
+          logger.error(error)
+          setIsError(true)
         })
       }
     }).catch((error) => {
-      console.log('error', error)
+      logger.error(error)
       setIsError(true)
     })
   }, [])

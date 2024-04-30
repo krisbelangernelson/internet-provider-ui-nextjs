@@ -22,6 +22,7 @@ export default function LazyBackgroundImg(props: Props) {
         transition: 'filter 0.5s',
         ...style,
       }}
+      data-testid="background-img"
     >
       {children}
     </div>

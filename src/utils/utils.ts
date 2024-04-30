@@ -1,4 +1,4 @@
-export const normalizeInputPhone = (value: string): string => {
+export function normalizeInputPhone(value: string): string {
   if (value === '') return value
   const currentValue = value.replace(/[^\d]/g, '')
   const cvLength = currentValue.length

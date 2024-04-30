@@ -27,7 +27,7 @@ export default function TextInput(props: TextInputProps) {
   return (
     <div>
       <label htmlFor={name} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{label}</label>
-      <input type={type} id={name} name={name} placeholder={placeholder} className={`border text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 ${color}`} onChange={onChange} value={value} />
+      <input type={type} id={name} name={name} placeholder={placeholder} className={`border text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 ${color}`} onChange={onChange} value={value} data-testid="input" />
       {isValid && feedback && <p className="mt-2 text-sm text-green-600 dark:text-green-500">{feedback}</p>}
       {isInvalid && feedback && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{feedback}</p>}
     </div>
