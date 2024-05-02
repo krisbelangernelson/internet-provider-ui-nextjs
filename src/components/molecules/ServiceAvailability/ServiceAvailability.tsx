@@ -30,11 +30,9 @@ export default function ServiceAvailability() {
 
   const onClickSearch = () => {
     setIsSearching(true)
-    setTimeout(() => {
-      setIsSearching(false)
-      setIsFound(true)
-      setHasSearched(true)
-    }, 1000)
+    setIsSearching(false)
+    setIsFound(true)
+    setHasSearched(true)
   }
 
   const onClickNext = () => {
@@ -62,6 +60,7 @@ export default function ServiceAvailability() {
                   placeholder="Enter address"
                   onChange={handleAddress}
                   value={address}
+                  dataTestid="address"
                 />
               </div>
               <div className="self-end mb-[0.2rem]">

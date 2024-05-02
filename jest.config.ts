@@ -28,6 +28,7 @@ const config: Config = {
   testMatch: ['**/?(*.)+(spec|test).ts?(x)'],
   coveragePathIgnorePatterns: [
     '<rootDir>/src/hooks/useElementOnScreen.ts', // can't cover observer internals
+    '<rootDir>/src/providers/customer/CustomerContext.ts',
   ],
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
@@ -35,8 +36,7 @@ const config: Config = {
   moduleNameMapper: {
     '@/(.*)': '<rootDir>/src/$1',
     '@public/(.*)': '<rootDir>/public/$1',
-    '^.+\\.(css|less)$': '<rootDir>/src/mocks/styleMock.ts',
-
+    '^.+\\.(css|less|scss)$': '<rootDir>/src/mocks/styleMock.ts',
   },
   setupFilesAfterEnv: [
     '<rootDir>/jest-setup.ts',
