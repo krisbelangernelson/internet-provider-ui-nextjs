@@ -16,6 +16,7 @@ export default function NavBurger(props: NavBurgerProps) {
       <button
         className="flex flex-col h-12 w-12 border-2 border-black rounded justify-center items-center group"
         onClick={() => setToggleMenu(!toggleMenu)}
+        data-testid="nav-burger"
       >
         <div
           className={`${burgerLine} ${toggleMenu
