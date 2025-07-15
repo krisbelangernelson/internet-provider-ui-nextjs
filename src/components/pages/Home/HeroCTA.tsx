@@ -10,7 +10,7 @@ export default function HeroCTA() {
       <div className="flex flex-row gap-4">
         <button
           type="button"
-          className="btn-primary"
+          className="px-6 py-3 bg-primary text-white text-base font-medium rounded-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg"
           onClick={() => {
             router.push(ROUTES.internet)
           }}
@@ -19,7 +19,7 @@ export default function HeroCTA() {
         </button>
         <button
           type="button"
-          className="btn-primary-outline"
+          className="px-6 py-3 border-2 border-primary text-white text-base font-medium rounded-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg"
           onClick={() =>
             document.getElementById('features-summary')?.scrollIntoView({ behavior: 'smooth' })}
         >

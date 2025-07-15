@@ -28,7 +28,7 @@ export default function HeroSection() {
                 </div>
                 <HeroCTA />
               </div>
-              <div className="flex-col items-center flex justify-center">
+              <div className="flex-col items-center flex justify-center transform hover:scale-105 transition-transform duration-700">
                 <div id="outer-ring">
                   <div id="outer-ring-filler">
                     <div id="inner-ring">
