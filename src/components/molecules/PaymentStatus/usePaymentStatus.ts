@@ -55,7 +55,6 @@ const usePaymentStatus = (): UsePaymentStatus => {
         }
 
         void api.createOrder(data).catch((error: Error) => {
-          console.error(error)
           showErrorNotification({
             error: 'Error in payment process or account creation. Please contact support.',
           })
